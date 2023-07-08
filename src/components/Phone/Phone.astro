@@ -3,6 +3,7 @@ import Header from "./PhoneHeader.astro";
 import Chat from "./Chat.astro";
 import ChatPhoto from "./Photo.astro";
 import PriceChooser from "./PriceChooser.astro";
+import ChatInput from "./Input.astro";
 ---
 
 {/* Device frame */}
@@ -44,6 +45,7 @@ import PriceChooser from "./PriceChooser.astro";
       />
       <PriceChooser time={30} units="minutes" price={29} />
       <PriceChooser time={1} units="hour" price={49} />
+      <ChatInput />
     </div>
   </div>
 </article>
