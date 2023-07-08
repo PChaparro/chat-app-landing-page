@@ -1,18 +1,22 @@
 ---
 interface Props {
+  inheritedClasses: string;
   orientation: "left" | "right";
   text: string;
 }
 
-const TextStyles = {
-  shared: "text-xs max-w-[65%] p-3 rounded-2xl font-medium shadow-sm",
-  left: "bg-pale-magenta rounded-bl-md text-moderate-violet",
-  right: "bg-white text-desaturated-violet ml-auto rounded-br-md",
-};
+const { inheritedClasses, orientation, text } = Astro.props;
 
-const { orientation, text } = Astro.props;
+const TextStyles = {
+  shared: `text-xs max-w-[65%] p-3 rounded-2xl font-medium shadow-sm `,
+  left: "bg-pale-magenta rounded-bl-md text-moderate-violet animate-fade-right",
+  right:
+    "bg-white text-desaturated-violet ml-auto rounded-br-md animate-fade-left",
+};
 ---
 
-<p class=`${TextStyles['shared']} ${TextStyles[orientation]}`>
+<p
+  class=`${inheritedClasses} ${TextStyles['shared']} ${TextStyles[orientation]}`
+>
   {text}
 </p>

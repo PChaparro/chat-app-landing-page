@@ -2,16 +2,17 @@
 import { Icon } from "astro-icon";
 
 interface Props {
+  inheritedClasses?: string;
   time: number;
   units: string;
   price: number;
 }
 
-const { time, units, price } = Astro.props;
+const { inheritedClasses, time, units, price } = Astro.props;
 ---
 
 <div
-  class="flex gap-2 items-center text-xs max-w-[75%] p-3 rounded-2xl rounded-bl-md shadow-sm text-white bg-gradient-to-r to-light-violet from-light-magenta"
+  class=`flex gap-2 items-center text-xs max-w-[75%] p-3 rounded-2xl rounded-bl-md shadow-sm text-white bg-gradient-to-r to-light-violet from-light-magenta animate-fade-right ${inheritedClasses}`
 >
   <Icon pack="ph" name="circle-thin" size={24} color="#d89eff" />
   <span>{time} {units} walk</span>

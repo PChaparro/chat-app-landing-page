@@ -1,10 +1,17 @@
 ---
 interface Props {
+  inheritedClasses?: string;
   src: string;
   alt: string;
 }
 
-const { src, alt } = Astro.props;
+const { inheritedClasses, src, alt } = Astro.props;
 ---
 
-<img src={src} class="rounded-2xl shadow-sm" alt={alt} width="60" height="60" />
+<img
+  src={src}
+  class=`rounded-2xl shadow-sm animate-fade-left ${inheritedClasses}`
+  alt={alt}
+  width="60"
+  height="60"
+/>

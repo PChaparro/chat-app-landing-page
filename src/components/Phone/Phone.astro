@@ -8,7 +8,7 @@ import ChatInput from "./Input.astro";
 
 {/* Device frame */}
 <article
-  class="rounded-[2rem] shadow-xl bg-white p-4 aspect-[10/20.5] w-full max-w-sm"
+  class="rounded-[2rem] shadow-xl bg-white p-4 aspect-[10/20.5] w-full max-w-sm animate-fade-right"
 >
   {/* Device screen */}
   <div class="h-full rounded-3xl overflow-hidden bg-light-grayish-violet">
@@ -16,35 +16,59 @@ import ChatInput from "./Input.astro";
     {/* Chat container */}
     <div class="p-4 flex flex-col gap-4">
       <Chat
+        inheritedClasses="animate-delay-100"
         orientation="left"
         text="That sounds great. I'd be happy with that."
       />
       <Chat
+        inheritedClasses="animate-delay-100"
         orientation="left"
         text="Could you send over some pictures of your dog, please?"
       />
       <div class="flex gap-4 ml-auto">
-        <ChatPhoto src="/images/dog-image-1.jpg" alt="A dog smiling" />
         <ChatPhoto
+          inheritedClasses="animate-delay-500"
+          src="/images/dog-image-1.jpg"
+          alt="A dog smiling"
+        />
+        <ChatPhoto
+          inheritedClasses="animate-delay-500"
           src="/images/dog-image-2.jpg"
           alt="A dog sitting in the sand"
         />
         <ChatPhoto
+          inheritedClasses="animate-delay-500"
           src="/images/dog-image-3.jpg"
           alt="A dog playing with an stick"
         />
       </div>
       <Chat
+        inheritedClasses="animate-delay-500"
         orientation="right"
         text="Here are a few pictures. She's a happy girl!"
       />
-      <Chat orientation="right" text="Can you make it?" />
       <Chat
+        inheritedClasses="animate-delay-500"
+        orientation="right"
+        text="Can you make it?"
+      />
+      <Chat
+        inheritedClasses="animate-delay-1000"
         orientation="left"
         text="She looks so happy! The time we discussed works. How long shall I take her out for?"
       />
-      <PriceChooser time={30} units="minutes" price={29} />
-      <PriceChooser time={1} units="hour" price={49} />
+      <PriceChooser
+        inheritedClasses="animate-delay-1000"
+        time={30}
+        units="minutes"
+        price={29}
+      />
+      <PriceChooser
+        inheritedClasses="animate-delay-1000"
+        time={1}
+        units="hour"
+        price={49}
+      />
       <ChatInput />
     </div>
   </div>
