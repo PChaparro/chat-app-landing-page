@@ -10,6 +10,7 @@ module.exports = {
         "light-grayish-violet": "hsl(270, 20%, 96%)",
         "pale-violet": "hsl(276, 100%, 81%)",
         "grayish-blue": "hsl(206, 6%, 79%)",
+        "dark-grayish-violet": "hsl(270, 7%, 64%)",
         // Chats
         "moderate-violet": "hsl(276, 55%, 52%)",
         "desaturated-violet": "hsl(271, 15%, 43%)",
