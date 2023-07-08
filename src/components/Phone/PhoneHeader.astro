@@ -1,0 +1,32 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<div
+  class="relative border p-4 pt-10 rounded-xl bg-gradient-to-r from-light-violet to-light-magenta flex gap-1 items-center justify-between"
+>
+  {/* Notch */}
+  <div
+    class="absolute bg-white h-10 w-3/5 rounded-3xl left-1/2 -translate-x-1/2 -top-4"
+  >
+  </div>
+  {/* Left side of the header */}
+  <div class="flex items-center gap-1">
+    <Icon pack="fe" name="arrow-left" size={24} color="#fff" />
+    <img
+      src="/images/avatar.jpg"
+      class="rounded-full border-white border-2 aspect-square"
+      alt="Samuel Green avatar"
+      width="40"
+      height="40"
+    />
+    <div class="ml-2 text-white">
+      <h2>Samuel Green</h2>
+      <p class="text-pale-violet text-xs">Available to Walk</p>
+    </div>
+  </div>
+  {/* Right side of the header */}
+  <div>
+    <Icon pack="fe" name="elipsis-v" size={24} color="#fff" />
+  </div>
+</div>

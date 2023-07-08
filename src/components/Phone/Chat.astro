@@ -1,0 +1,18 @@
+---
+interface Props {
+  orientation: "left" | "right";
+  text: string;
+}
+
+const TextStyles = {
+  shared: "text-xs max-w-[65%] p-3 rounded-2xl font-medium shadow-sm",
+  left: "bg-pale-magenta rounded-bl-md text-moderate-violet",
+  right: "bg-white text-desaturated-violet ml-auto rounded-br-md",
+};
+
+const { orientation, text } = Astro.props;
+---
+
+<p class=`${TextStyles['shared']} ${TextStyles[orientation]}`>
+  {text}
+</p>
