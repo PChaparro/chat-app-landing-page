@@ -1,11 +1,13 @@
 ---
 import Header from "./PhoneHeader.astro";
 import Chat from "./Chat.astro";
+import ChatPhoto from "./Photo.astro";
+import PriceChooser from "./PriceChooser.astro";
 ---
 
 {/* Device frame */}
 <article
-  class="rounded-[2rem] shadow-lg bg-white p-4 aspect-[10/19] w-full max-w-sm"
+  class="rounded-[2rem] shadow-xl bg-white p-4 aspect-[10/20.5] w-full max-w-sm"
 >
   {/* Device screen */}
   <div class="h-full rounded-3xl overflow-hidden bg-light-grayish-violet">
@@ -20,6 +22,17 @@ import Chat from "./Chat.astro";
         orientation="left"
         text="Could you send over some pictures of your dog, please?"
       />
+      <div class="flex gap-4 ml-auto">
+        <ChatPhoto src="/images/dog-image-1.jpg" alt="A dog smiling" />
+        <ChatPhoto
+          src="/images/dog-image-2.jpg"
+          alt="A dog sitting in the sand"
+        />
+        <ChatPhoto
+          src="/images/dog-image-3.jpg"
+          alt="A dog playing with an stick"
+        />
+      </div>
       <Chat
         orientation="right"
         text="Here are a few pictures. She's a happy girl!"
@@ -29,6 +42,8 @@ import Chat from "./Chat.astro";
         orientation="left"
         text="She looks so happy! The time we discussed works. How long shall I take her out for?"
       />
+      <PriceChooser time={30} units="minutes" price={29} />
+      <PriceChooser time={1} units="hour" price={49} />
     </div>
   </div>
 </article>

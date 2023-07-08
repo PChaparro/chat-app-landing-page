@@ -1,0 +1,19 @@
+---
+import { Icon } from "astro-icon";
+
+interface Props {
+  time: number;
+  units: string;
+  price: number;
+}
+
+const { time, units, price } = Astro.props;
+---
+
+<div
+  class="flex gap-2 items-center text-xs max-w-[75%] p-3 rounded-2xl rounded-bl-md shadow-sm text-white bg-gradient-to-r to-light-violet from-light-magenta"
+>
+  <Icon pack="ph" name="circle-thin" size={24} color="#d89eff" />
+  <span>{time} {units} walk</span>
+  <em class="font-bold text-xl ml-auto mr-2">${price}</em>
+</div>
