@@ -1,0 +1,10 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+}
+
+const { src, alt } = Astro.props;
+---
+
+<img src={src} class="rounded-2xl shadow-sm" alt={alt} width="60" height="60" />
