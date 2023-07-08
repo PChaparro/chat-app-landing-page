@@ -3,6 +3,48 @@ import Phone from "../components/Phone/Phone.astro";
 import HeroTexts from "../components/HeroTexts.astro";
 ---
 
+<style>
+	#main::before,
+	#main::after {
+		content: "";
+		position: absolute;
+		width: 65%;
+		max-width: 35rem;
+		height: 150vh;
+		border-radius: 15rem;
+	}
+
+	#main::before {
+		bottom: 20rem;
+		background: linear-gradient(
+			to top right,
+			hsl(264, 100%, 61%),
+			hsl(293, 100%, 63%)
+		);
+	}
+
+	#main::after {
+		display: none;
+		top: 20rem;
+		background-color: hsl(291, 47%, 97%);
+		right: 0;
+	}
+
+	@media screen and (min-width: 768px) {
+		#main::before {
+			width: 50%;
+			bottom: 5rem;
+		}
+	}
+
+	/* Just for xlg screens */
+	@media screen and (min-width: 1200px) {
+		#main::after {
+			display: block;
+		}
+	}
+</style>
+
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -13,9 +55,19 @@ import HeroTexts from "../components/HeroTexts.astro";
 		<title>Frontend Mentor | Dog Walkers Booking</title>
 	</head>
 	<body>
-		<main class="min-h-screen bg-[#FAFAFA] flex items-center">
+		<main
+			class="min-h-screen bg-[#FAFAFA] flex items-center relative overflow-hidden"
+			id="main"
+		>
+			{
+				/*
 			<div
-				class="w-full max-w-screen-xl mx-auto p-8 gap-12 grid md:grid-cols-2 items-center"
+				class="absolute bottom-16 -left-4 w-[30%] rounded-[18rem] h-[150vh] bg-gradient-to-tr from-light-violet to-light-magenta"
+			>
+			*/
+			}
+			<div
+				class="w-full max-w-screen-xl mx-auto p-8 gap-12 grid md:grid-cols-2 items-center z-10"
 			>
 				<Phone />
 				<HeroTexts />
